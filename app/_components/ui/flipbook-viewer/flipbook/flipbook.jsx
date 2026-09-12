@@ -2,7 +2,6 @@
 import React, { memo, useState, useEffect, useCallback } from 'react';
 import useRefSize from '@/app/_hooks/use-ref-size';
 import FlipbookLoader from './flipbook-loader';
-import { cn } from '@/app/_lib/utils';
 import { TransformComponent } from 'react-zoom-pan-pinch';
 import screenfull from 'screenfull';
 
@@ -50,7 +49,7 @@ const Flipbook = memo(({ viewerStates, setViewerStates, flipbookRef, pdfDetails 
     }, [handleFullscreenChange]);
 
     return (
-        <div ref={ref} className={cn("relative h-[15rem] xs:h-[20rem] lg:h-[28rem] xl:h-[30rem] w-full bg-transparent flex justify-center items-center overflow-hidden", screenfull?.isFullscreen && 'h-screen')}>
+        <div ref={ref} className="relative h-full w-full bg-transparent flex justify-center items-center overflow-hidden">
             <TransformComponent wrapperStyle={{ width: "100%", height: "100%" }} contentStyle={{ width: "100%", height: "100%" }}>
                 <div className='overflow-hidden flex justify-center items-center h-full w-full'>
                     {pdfDetails && scale && (
