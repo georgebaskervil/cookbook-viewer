@@ -40,55 +40,42 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
-          <style>
-          /* Force the flipbook containers to fill viewport instead of fixed rem heights */
-          .relative.h-\[20\.163rem\],
-          div[class*="h-[20.163rem]"] {
-            height: 100vh !important;
-            height: 100dvh !important;
-          }
-        
-          div[class*="h-\[15rem\]"],
-          div[class*="h-\[20rem\]"] {
-            height: 100% !important;
-            max-height: none !important;
-          }
-        
-          /* Let the pan/zoom wrapper and content fill available space */
-          .transform-component-module_wrapper__SPB86,
-          .transform-component-module_content__FBWxo {
-            width: 100% !important;
-            height: 100% !important;
-          }
-        
-          /* Force the fixed-size inner div wrapping the flipbook to scale up */
-          div[style*="width: 452.257px"] {
-            width: 100% !important;
-            height: 100% !important;
-          }
-        
-          /* Scale up the flipbook wrapper itself */
-          .stf__parent {
-            width: 100% !important;
-            height: 100% !important;
-          }
-        
-          .stf__block {
-            width: 100% !important;
-            height: 100% !important;
-          }
-        
-          .stf__item {
-            width: 100% !important;
-            height: 100% !important;
-          }
-        
-          /* Scale canvases up to fill their (now larger) parent */
-          .react-pdf__Page__canvas {
-            width: 100% !important;
-            height: 100% !important;
-          }
-        </style>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .relative.h-\\[20\\.163rem\\],
+            div[class*="h-[20.163rem]"] {
+              height: 100vh !important;
+              height: 100dvh !important;
+            }
+          
+            div[class*="h-\\[15rem\\]"],
+            div[class*="h-\\[20rem\\]"] {
+              height: 100% !important;
+              max-height: none !important;
+            }
+          
+            .transform-component-module_wrapper__SPB86,
+            .transform-component-module_content__FBWxo {
+              width: 100% !important;
+              height: 100% !important;
+            }
+          
+            div[style*="width: 452.257px"] {
+              width: 100% !important;
+              height: 100% !important;
+            }
+          
+            .stf__parent,
+            .stf__block,
+            .stf__item {
+              width: 100% !important;
+              height: 100% !important;
+            }
+          
+            .react-pdf__Page__canvas {
+              width: 100% !important;
+              height: 100% !important;
+            }
+          `}} />
         <NprogressProviders>
           <ThemeProvider attribute="class" defaultTheme="dark">
             {children}
