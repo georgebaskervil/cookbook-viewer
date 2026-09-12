@@ -40,42 +40,6 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
-          <style dangerouslySetInnerHTML={{ __html: `
-            .relative.h-\\[20\\.163rem\\],
-            div[class*="h-[20.163rem]"] {
-              height: 100vh !important;
-              height: 100dvh !important;
-            }
-          
-            div[class*="h-\\[15rem\\]"],
-            div[class*="h-\\[20rem\\]"] {
-              height: 100% !important;
-              max-height: none !important;
-            }
-          
-            .transform-component-module_wrapper__SPB86,
-            .transform-component-module_content__FBWxo {
-              width: 100% !important;
-              height: 100% !important;
-            }
-          
-            div[style*="width: 452.257px"] {
-              width: 100% !important;
-              height: 100% !important;
-            }
-          
-            .stf__parent,
-            .stf__block,
-            .stf__item {
-              width: 100% !important;
-              height: 100% !important;
-            }
-          
-            .react-pdf__Page__canvas {
-              width: 100% !important;
-              height: 100% !important;
-            }
-          `}} />
         <NprogressProviders>
           <ThemeProvider attribute="class" defaultTheme="dark">
             {children}
