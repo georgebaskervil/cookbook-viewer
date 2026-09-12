@@ -59,16 +59,6 @@ const FlipbookViewer = ({ pdfUrl, shareUrl, className, disableShare }) => {
                 screenfull={screenfull}
                 pdfDetails={pdfDetails}
               />
-              <Toolbar
-                viewerStates={viewerStates}
-                setViewerStates={setViewerStates}
-                containerRef={containerRef}
-                flipbookRef={flipbookRef}
-                screenfull={screenfull}
-                pdfDetails={pdfDetails}
-                shareUrl={shareUrl}
-                disableShare={disableShare}
-              />
             </div>
           </TransformWrapper >
         }
